@@ -1,9 +1,6 @@
 # pw-1.23-seg
 Faculdade de Tecnologia e Inovação Senac DF -  Disciplina Padrões Web - 1.23 - turma 1ºGTI e 1ºSI - Prof. Marcio Araya
 
-# pw-1.23-seg
-## Disciplina Padrões Web - Faculdade Senac DF - 1.2023 - 1ADS e 1SI
-
   
 Neste repositório vamos disponibilizar os códigos elaborados nas aulas da disciplina **Padrões Web** ministradas no primeiro semestre de 2023 para a turma do 1º GTI e 1º SI do turno matutino da **Faculdade de Tecnologia e Inovação Senac DF**.
   
@@ -19,7 +16,7 @@ Para baixar utilizando o **git**:
 git config --global user.name "Fulano de Tal"
 git config --global user.email fulanodetal@exemplo.br
 ```
-3.  Para ^^clonar^^ este repositório, dentro de uma pasta que você escolher digite o comando abaixo (não é necessário estar logado no Github):
+3.  Para **clonar** este repositório, dentro de uma pasta que você escolher digite o comando abaixo (não é necessário estar logado no Github):
 ```
 git clone https://github.com/marcioaraya/pw-1.23-seg.git
 ```
