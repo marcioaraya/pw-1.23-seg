@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.coluna {
+    border: 5px solid black;
+    border-radius: 20%;
+    text-align: center;
+    margin: 20px;
+    height: 300px;
+    width: 300px;
+}
+
+.coluna:hover {
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+#col1 {
+    background-color: red;
+}
+
+#col2 {
+    background-color: green;
+}
+
+#col3 {
+    background-color: blue;
+}
+
+#col4 {
+    background-color: yellow;
+}
