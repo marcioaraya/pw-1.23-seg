@@ -22,7 +22,7 @@ body {
 .coluna:hover {
     font-weight: bold;
     color: white;
-    background-color: black;
+    background-color: black !important;
 }
 
 #col1 {
