@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div class="form-group">
+        <div class="form-control">
+            <label for="id_n1">Primeiro Número</label>
+            <input type="text" id="id_n1"
+                   placeholder="Digite um número">
+        </div>
+        <div class="form-control">
+            <label for="id_n2">Segundo Número</label>
+            <input type="text" id="id_n2"
+                    placeholder="Digite um número">
+        </div>
+        <h2>Operação</h2>
+        <div class="form-control">
+            <input type="radio" id="id_soma" name="operacao" value="soma">
+            <label for="id_soma">Soma</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" id="id_sub" name="operacao" value="sub">
+            <label for="id_sub">Subtração</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" id="id_mult" name="operacao" value="mult">
+            <label for="id_mult">Multiplicação</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" id="id_div" name="operacao" value="div">
+            <label for="id_div">Divisão</label>
+        </div>
+        <div class="form-control">
+            <button onclick="calcula()" class="btn btn-primary">Calcular</button>
+        </div>
+        <!-- usamos a tag span para 'marcar' o local onde desejamos exibir o resultado da operação escolhida -->
+        <h2>Resultado:<span id="id_res"></span></h2>
+    </div>
+    <script>
+        function calcula()
+        {
+            // obter valores de n1 e n2
+            // document -  indica o documento HTML definido neste arquivo
+            // getElementById() - procura nesta página o elemento cujo atributo 'id' é o indicado, 
+            // ou seja, 'id_n1' ou 'id_n2'
+            // value é o atributo que contém o valor digitado na caixa de texto
+            let n1 = parseFloat(document.getElementById("id_n1").value);
+            let n2 = parseFloat(document.getElementById("id_n2").value);
+
+            // obter a operação selecionada
+            // o método querySelector() vai buscar elementos para os quais a expressão seja verdadeira
+            // a expressao 'input[name="operacao"]:checked' especifica a tag <input> que tenha atributo 'name' igual a 'operacao' 
+            // e que esteja marcado ('checked')
+            // 'value' é o atributo que contém o valor atribuído a esse elemento (botão de rádio) que está marcado
+            let operacao = document.querySelector('input[name="operacao"]:checked').value;
+
+            // efetuar o cálculo
+            let resultado = 0;
+            if (operacao == "soma") {
+                resultado = n1 + n2;
+            } else if (operacao == "sub") {
+                resultado = n1 - n2;
+            } else if (operacao == "mult") {
+                resultado = n1 * n2; 
+            } else if (operacao == "div") {
+                if (n2 != 0) {
+                    resultado = n1 / n2;
+                } else {
+                    alert('Não é possível dividir por zero.');
+                }
+            } else {
+                alert('Operação inválida!');
+            }
+
+            // mostrar o resultado
+            // innerHTML é o atributo que representa o conteúdo da tag recuperada com o 
+            // document.getElementById("id_res")
+            // quando atribuímos o conteúdo da variável 'resultado' para o 'innerHTML'
+            // estamos reescrevendo a página e vai aparecer o resultado calculado.
+            document.getElementById("id_res").innerHTML = resultado;
+
+        }
+    </script>
+</body>
+</html>
